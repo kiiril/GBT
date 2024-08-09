@@ -1,4 +1,4 @@
-# GBT
+# ID3
 Custom implementation of decision tree(ID3) for classification tasks
 
 ## Comments
