@@ -2,7 +2,7 @@ import numpy as np
 
 # ID3
 class ID3():
-    def __init__(self, max_depth=None, min_samples_split=None):
+    def __init__(self, max_depth=None, min_samples_split=2):
         self.root = None
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
@@ -87,7 +87,7 @@ class ID3():
             unique_y, counts = np.unique(y, return_counts=True)
             return Node(value=unique_y[np.argmax(counts)]) # return the majority class or remaining class
         
-        features_info_gain = [self.info_gain(X, feature_index, y) for feature_index in range(n_)]
+        features_info_gain = [self.info_gain(X, feature_index, y) for feature_index in range(n_features)]
         
         best_feature_index = np.argmax([gain for gain, _ in features_info_gain])
 
